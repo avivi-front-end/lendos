@@ -1,0 +1,414 @@
+.container.main-container
+    .content-wrapper.content-wrapper--top
+        .content-wrapper__inner
+            .results
+                .section-title.
+                    на результат влияют
+                    четыре компонента
+                .results__wrapper    
+                    .results__item
+                        .results__text.
+                            Качество <br>
+                            и востребованность <br>
+                            продукта
+                    .results__item
+                        .results__text.
+                            Своевременая<br>
+                            обработка<br>
+                            заявок      
+                    .results__item
+                        .results__text.
+                            Целевой <br>
+                            трафик        
+                    .results__item
+                        .results__text.
+                            Качество<br>
+                            лэндинга    
+            .what-we-do
+                .section-title.what-we-do__title.
+                    Что мы делаем      
+                .what-we-do__wrapper
+                    .what-we-do__item.what-we-do__item--1
+                        .what-we-do__icon-wrapper-top
+                            .what-we-do__icon-wrapper
+                                img(src="img/present.png").what-we-do__icon.what-we-do__icon--present
+                        .what-we-do__item-text-wrapper    
+                            .what-we-do__item-title.
+                                Формируем УТП        
+                            .what-we-do__item-text.
+                                Обычно у наших клиентов хороший продукт. Поэтому мы не выдумываем не существующих преимуществ, а помогаем их правильно преподнести.    
+                    .what-we-do__item.what-we-do__item--2
+                        .what-we-do__icon-wrapper-top
+                            .what-we-do__icon-wrapper
+                                img(src="img/pen.png").what-we-do__icon.what-we-do__icon--present
+                        .what-we-do__item-text-wrapper    
+                            .what-we-do__item-title.
+                                Создаём прототип и дизайн  
+                            .what-we-do__item-text.
+                                Вникаем в задачу клиента, доносим пользу продукта с помощью логики поведения клиентов, текста и принципов управления вниманием.
+                    .what-we-do__item.what-we-do__item--3
+                        .what-we-do__icon-wrapper-top
+                            .what-we-do__icon-wrapper
+                                img(src="img/code.png").what-we-do__icon.what-we-do__icon--present
+                        .what-we-do__item-text-wrapper    
+                            .what-we-do__item-title.
+                                Программируем, настраиваем рекламу, 
+                                и тестируем продукт 
+                            .what-we-do__item-text.
+                                Адаптируем под мобильные устройства, тестируем формы, настраиваем админку 
+                                и подключаем мет рику.
+                    .what-we-do__item.what-we-do__item--4
+                        .what-we-do__icon-wrapper-top
+                            .what-we-do__icon-wrapper
+                                img(src="img/crm.png").what-we-do__icon.what-we-do__icon--present
+                        .what-we-do__item-text-wrapper    
+                            .what-we-do__item-title.
+                                Подключаем CRM-систему  
+                            .what-we-do__item-text.
+                                Подключаем CRM-систему, создаём воронку продаж для ваших менеджеров, помогаем проработать возражения.
+    .callback
+        .callback__wrapper
+            .callback__title.
+                Позвоните нам!
+            .callback__sub-title.
+                Чтобы долго не изучать сайт, начните с нашей консультации. 
+                Мы обсудим задачу и подготовим индивидуальное предложение
+
+            a(data-fancybox data-src="#consult" href="javascript:;").btn.callback__btn     Отправить заявку
+    .content-wrapper.content-wrapper--bottom
+        .content-wrapper__inner
+            .slider-section
+                .section-title.
+                    Что мы делаем     
+                .slider-section__wrapper
+                    .slider-section__left
+                        .slider-section__head
+                            .slider-section__head-list
+                                a(href="#").slider-section__head-link.active
+                                    span Стратегия 
+                                a(href="#").slider-section__head-link
+                                    span Разработка 
+                                a(href="#").slider-section__head-link
+                                    span Реклама  
+                                a(href="#").slider-section__head-link
+                                    span Поддержка
+
+                        .slider-section__body
+                            .slider-section__slider.js-slider
+                                - for(var i=0;i<4;i++)
+                                    .slider-section__slider-item
+                                        .slider-section__slider-title.
+                                            Стратегия и планирование
+                                        .slider-section__slider-text
+                                            p.
+                                                Брифинг — вникаем в задачу и бизнес. Никаких бумажек
+                                            p.
+                                                Аналитика — определяем ЦА, анализируем конкурентов.
+                                            p.
+                                                Прототипирование. Создаём логичное повествование 
+                                                о продукте. Тестируем идеи на этапе серых квадратов    
+                            .slider-section__btns
+                                a(href="#").slider-section__btn.js-slider-prev
+                                    img(src="img/left.png" alt="")
+                                a(href="#").slider-section__btn.js-slider-next                    
+                                    img(src="img/right.png" alt="")
+                    .slider-section__right  
+                        img(src="img/slider-right.jpg" alt="")
+            .calculator
+                .calculator__title.
+                    Калькулятор рентабельности<br>
+                    рекламы в интернете
+                .calculator__wrapper.js-lm-calc
+                    .calculator__step.calculator__step--1
+                        .calculator__step-title.
+                            Реклама
+                        .calculator__step-wrapper        
+                            .calculator__step-form-group
+                                .calculator__step-name.
+                                    Рекламный
+                                    бюджет
+                                .calculator__step-input-wrapper
+                                    input(type="text" value="50000").calculator__step-input.js-lm-calc__input.js-lm-calc__adv-budget
+                                    input(type="text" value="71 429").calculator__step-input.js-lm-calc__input.js-lm-calc__ad-imp
+                                .calculator__step-result
+                                    | Показов рекламы            
+                            .calculator__step-form-group
+                                .calculator__step-name.
+                                    Цена за клик
+                                .calculator__step-input-wrapper
+                                    input(type="text" value="10").calculator__step-input.js-lm-calc__input.js-lm-calc__cpc
+                                .calculator__step-result
+                                    span.js-lm-calc__foot.js-lm-calc__transitions 5000
+                                    | Переходов
+                            .calculator__step-form-group
+                                .calculator__step-name.
+                                    CTR
+                                .calculator__step-input-wrapper
+                                    input(type="text" value="7").calculator__step-input.js-lm-calc__input.js-lm-calc__ctr
+                                .calculator__step-result
+                                    span.js-lm-calc__lead-cost 167
+                                    | Стоимость лида           
+                    .calculator__step.calculator__step--2
+                        .calculator__step-title.
+                            Сайт
+                        .calculator__step-wrapper        
+                            .calculator__step-form-group
+                                .calculator__step-name.
+                                    Конверсия<br>
+                                    лендинга
+                                .calculator__step-input-wrapper
+                                    input(type="text" value="6").calculator__step-input.js-lm-calc__input.js-lm-calc__conversion
+                                .calculator__step-result
+                                    span.js-lm-calc__foot.js-lm-calc__request 120
+                                    | Заявок  
+                    .calculator__step.calculator__step--3
+                        .calculator__step-title.
+                            Отдел продаж
+                        .calculator__step-wrapper        
+                            .calculator__step-form-group
+                                .calculator__step-name.
+                                    Конверсия<br>
+                                    в продажи
+                                .calculator__step-input-wrapper
+                                    input(type="text" value="40").calculator__step-input.js-lm-calc__input.js-lm-calc__conv-sale
+                                .calculator__step-result
+                                    span.js-lm-calc__foot.js-lm-calc__person 120
+                                    | Клиентов
+                    .calculator__step.calculator__step--4
+                        .calculator__step-title.
+                            Деньги
+                        .calculator__step-wrapper        
+                            .calculator__step-form-group
+                                .calculator__step-name.
+                                    Рентабельность
+                                .calculator__step-input-wrapper
+                                    input(type="text" value="35").calculator__step-input.js-lm-calc__input.js-lm-calc__profit
+                                    input(type="text" value="45 000").calculator__step-input.js-lm-calc__input.js-lm-calc__av-ticket
+                                .calculator__step-result.
+                                    Средний чек        
+                            .calculator__step-form-group
+                                .calculator__step-name.
+                                    Чистая прибыль
+                                .calculator__step-input-wrapper
+                                    input(type="text" value="1 840 000").calculator__step-input.js-lm-calc__input.js-lm-calc__net-profit
+                                .calculator__step-result.
+                                    ROI = <span class="js-lm-calc__roi" style="display: inline-block;">3680</span>%      
+            .offer-banner
+                .offer-banner__text.
+                    Бесплатно спрогнозируем бюджет <br>
+                    на рекламу и рассчитаем ROI  
+                a(href="#").offer-banner__link — Давайте!                          
+            .portfolio
+                .section-title.
+                    Наше портфолио
+                .portfolio__wrapper
+                    .portfolio__wrapper-top
+                        .portfolio__wrapper-top-item
+                            .portfolio__item
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq
+                            .portfolio__item.portfolio__item--half
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq
+                            .portfolio__item.portfolio__item--half
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq
+                        .portfolio__wrapper-top-item
+                            .portfolio__item.portfolio__item--half
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq
+                            .portfolio__item.portfolio__item--half
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq
+                            .portfolio__item
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq                                
+                    .portfolio__wrapper-middle
+                        .portfolio__item
+                            a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--long
+                    .portfolio__wrapper-bottom
+                        .portfolio__wrapper-bottom-item.portfolio__wrapper-bottom-item
+                            .portfolio__item
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq
+                            .portfolio__item        
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq    
+                        .portfolio__wrapper-bottom-item.portfolio__wrapper-bottom-item--half
+                            .portfolio__item
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq
+                        .portfolio__wrapper-bottom-item.portfolio__wrapper-bottom-item
+                            .portfolio__item                   
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq
+                            .portfolio__item        
+                                a(href="https://s-media-cache-ak0.pinimg.com/originals/0c/39/9d/0c399dc826b609c39334584b78436643.png" data-fancybox="images" ).portfolio__item-inner.portfolio__item-inner--sq    
+            .price
+                .section-title.price__title.
+                    Сколько стоит
+                .price__wrapper
+                    .price__sub-title.
+                        Рассказываем, что лендинги бывают разные: черные, белые, 
+                        красные. Но всем одинаково хочеться на мозгоеб заморочиться  
+                    .price__table-wrapper    
+                        table.price__table                    
+                            thead
+                                tr
+                                    th.
+                                        Услуги
+                                    th.
+                                        Базовый   
+                                    th.
+                                        Продажи 
+                                    th.
+                                        Мегаконверсия            
+                            tbody
+                                tr
+                                    td.
+                                        Статический Прототип  
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                tr
+                                    td.
+                                        Дизайн
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                tr
+                                    td.
+                                        Программирование
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                        
+                                        
+                                tr
+                                    td.
+                                        Посадка на CMS
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                        
+                                tr
+                                    td.
+                                        Подключение яндекс метрики 
+                                        и гугль эдвордс
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                        
+                                tr
+                                    td.
+                                        Редактура контента
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                        
+                                tr
+                                    td
+                                        | Настройка АmoCRM.
+                                        span  аккаунт на 6 месяцев
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                        
+                                        
+                                tr
+                                    td.
+                                        Настройка рекламных кампаний
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                        
+                                tr
+                                    td.
+                                        Анализ статистики и отчет через
+                                        две недели после запуска
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                        
+                                tr
+                                    td.
+                                        Одна доработка лэндинга
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                    td.
+                                        +
+                                tr.price__table-buttons
+                                    td 
+                                    td 
+                                        a(href="#").price__table-link.btn 53 000 ₽ 
+                                    td
+                                        a(href="#").price__table-link.btn 95 000 ₽ 
+                                    td                         
+                                        a(href="#").price__table-link.btn 150 000 ₽ 
+            .info
+                .info__wrapper
+                    .info__item-row.info__item-row--top
+                        .info__item
+                            .info__item-icon-wrapper-top
+                                .info__item-icon-wrapper
+                                    img(src="img/info-1.png" alt="").info__item-icon
+                            .info__item-text.
+                                Мультивариативное<br>
+                                a\b тестирование        
+                        .info__item
+                            .info__item-icon-wrapper-top
+                                .info__item-icon-wrapper
+                                    img(src="img/info-2.png" alt="").info__item-icon
+                            .info__item-text.
+                                Интеграция с CRM и другие<br>
+                                интеграции
+                    .info__item-row.info__item-row--middle           
+                        .info__item.info__item--bottom
+                            .info__item-icon-wrapper-top
+                                .info__item-icon-wrapper
+                                    img(src="img/info-3.png" alt="").info__item-icon
+                            .info__item-text.
+                                Подключение систем<br>
+                                оплаты онлайн
+                        .info__item
+                            .info__item-icon-wrapper-top
+                                .info__item-icon-wrapper
+                                    img(src="img/info-4.png" alt="").info__item-icon
+                            .info__item-text.
+                                Сложная анимация <br>
+                                и иллюстрация
+                    .info__item-row.info__item-row--bottom               
+                        .info__item.info__item--bottom
+                            .info__item-icon-wrapper-top
+                                .info__item-icon-wrapper
+                                    img(src="img/info-5.png" alt="").info__item-icon
+                            .info__item-text.
+                                Подключение к вашей системе <br>
+                                администрирования
+                        .info__item.info__item--bottom
+                            .info__item-icon-wrapper-top
+                                .info__item-icon-wrapper
+                                    img(src="img/info-6.png" alt="").info__item-icon
+                            .info__item-text.
+                                Мультилендинг —<br>
+                                уникальный контент для<br>
+                                каждого региона или ЦА                                        

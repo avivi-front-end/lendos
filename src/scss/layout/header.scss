@@ -1,0 +1,50 @@
+// $proxima: 'Proxima Nova Rg',Arial,sans-serif;
+// $proximaLight: 'Proxima Nova Lt',Arial,sans-serif;
+
+
+
+.header {
+    background: url("../img/header.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 211px;
+    padding-bottom: 200px;
+
+    @media (max-width: $screen-lg-max){
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    @media (max-width: $screen-sm-max){
+        padding-top: 60px;
+    }
+
+    &__title {
+        font-family: $proximaLight;
+        font-weight: normal;
+        font-size: 60px;
+        color: #eecdff;
+        text-align: center;
+        margin-bottom: 20px;
+        line-height: (72/60);
+        padding: 0 120px;
+        @media (max-width: $screen-md-max){
+            padding: 0;
+        }
+
+        @media (max-width: $screen-sm-max){
+            font-size: 40px;
+        }
+    }
+
+    &__sub-title {
+        font-family: $proxima;
+        font-size: 26px;
+        color: #fff;
+        line-height: (44/26);
+        text-align: center;
+        @media (max-width: $screen-sm-max){
+            font-size: 20px;
+        }
+    }
+}

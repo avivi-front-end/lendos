@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Proxima Nova Lt';
+    src: url('fonts/proxima/ProximaNova-Light.eot');
+    src: url('fonts/proxima/ProximaNova-Light.eot?#iefix') format('embedded-opentype'), url('fonts/proxima/ProximaNova-Light.woff') format('woff'), url('fonts/proxima/ProximaNova-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('fonts/proxima/ProximaNova-Regular.eot');
+    src: url('fonts/proxima/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/proxima/ProximaNova-Regular.woff') format('woff'), url('fonts/proxima/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proxima Nova Semi';
+	src: url('fonts/proxima/ProximaNova-Semibold.eot');
+	src: url('fonts/proxima/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/proxima/ProximaNova-Semibold.woff') format('woff'),
+		url('fonts/proxima/ProximaNova-Semibold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+$proxima: 'Proxima Nova Rg',Arial,sans-serif;
+$proximaSemi: 'Proxima Nova Semi',Arial,sans-serif;
+$proximaLight: 'Proxima Nova Lt',Arial,sans-serif;

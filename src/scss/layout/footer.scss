@@ -1,0 +1,93 @@
+@mixin footer {
+    color: #fff;
+    font-size: 18px;
+    font-family: $proximaSemi;
+}
+
+.footer {
+    background: url("../img/header.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 66px;
+    padding-bottom: 149px;
+
+    @media (max-width: $screen-sm-max){
+        padding-bottom: 30px;
+    }
+
+    &__title {
+        font-family: $proximaLight;
+        font-weight: normal;
+        font-size: 60px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 11px;
+        line-height: (72/60);
+        @media (max-width: $screen-sm-max) {
+            font-size: 45px;
+        }
+    }
+
+    &__sub-title {
+        font-family: $proxima;
+        font-size: 30px;
+        color: #fff;
+        line-height: 40px;
+        text-align: center;
+        margin-bottom: 46px;
+        @media (max-width: $screen-sm-max) {
+            font-size: 20px;
+        }
+    }
+
+    &__form {
+        width: 420px;
+        margin: 0 auto;
+        @media (max-width: $screen-sm-max) {
+            width: 100%;
+        }
+    }
+
+    &__form-group {
+        margin-bottom: 37px;
+    }
+
+    &__form-input {
+        height: 33px;
+        background: transparent;
+        border: none;
+        border-bottom: 5px solid #fff;
+        width: 100%;
+
+        &::-webkit-input-placeholder {
+            @include footer();
+        }
+
+        &::-moz-placeholder {
+            @include footer();
+        }
+
+        &:-moz-placeholder {
+            @include footer();
+        }
+
+        &:-ms-input-placeholder {
+            @include footer();
+        }
+    }
+
+    &__form-submit {
+        cursor: pointer;
+        height: 105px;
+        outline: none;
+        border: none;
+        font-size: 30px;
+        margin-top: 72px;
+        border-bottom: 5px solid #b12e3c;
+        @media (max-width: $screen-sm-max) {
+            width: 100%;
+            font-size: 16px;
+            height: 50px;
+        }
+    }
+}
