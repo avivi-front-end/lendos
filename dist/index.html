@@ -14,15 +14,15 @@
         <div class="pop-up__title">Консультация</div>
         <div class="pop-up__sub-title">
           Перезвоним в течение рабочего дня 
-          и разберемся в задаче           
+          и&nbsp;разберемся в задаче           
         </div>
-        <form>   
+        <form class="form-pop-up js-form-order"> 
           <div class="pop-up__form">
             <div class="pop-up__form-group pop-up__form-group--half">
-              <input class="pop-up__input" type="text" placeholder="Ваше имя">
+              <input class="recuired pop-up__input" type="text" placeholder="Ваше имя" name="name">
             </div>
-            <div class="pop-up__form-group pop-up__form-group--half">
-              <input class="pop-up__input" type="text" placeholder="Телефон">
+            <div class="pop-up__form-group pop-up__form-group--half converter-input">
+              <input class="recuired pop-up__input" type="text" placeholder="Телефон" name="phone">
             </div>
             <div class="pop-up__form-group">
               <textarea class="pop-up__textarea" type="text"></textarea>
@@ -32,12 +32,41 @@
         </form>
       </div>
     </div>
+    <div class="pop-up" id="prognoz" style="display:none;">
+      <div class="pop-up__wrapper">
+        <div class="pop-up__title">Спрогнозировать бюджет</div>
+        <div class="pop-up__sub-title">
+          Перезвоним в течение рабочего дня 
+          и&nbsp;разберемся в задаче           
+        </div>
+        <form class="js-form-prognoz"> 
+          <div class="pop-up__form">
+            <div class="pop-up__form-group pop-up__form-group--half">
+              <input class="recuired pop-up__input" type="text" placeholder="Ваше имя" name="name">
+            </div>
+            <div class="pop-up__form-group pop-up__form-group--half converter-input">
+              <input class="recuired pop-up__input" type="text" placeholder="Телефон" name="phone">
+            </div>
+            <div class="pop-up__form-group textarea-wrap">
+              <textarea class="pop-up__textarea" type="text"></textarea><span>Если вы немного расскажете о своей задаче здесь, мы будем задавать меньше вопросов по телефону</span>
+            </div>
+            <button class="pop-up__submit btn" type="submit">Получить прогноз </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="pop-up pop-up_thx" id="thx" style="display:none;">
+      <div class="pop-up__wrapper pop-up__wrapper_thx">
+        <div class="pop-up__title pop-up__title_thx">Спасибо!</div>
+        <div class="pop-up__sub-title pop-up__sub-title_thx">Мы приняли вашу заявку. Компетентный менеджер свяжется с вами в течение дня           </div><a class="pop-up__submit btn js-pop-up-close" href="#">Закрыть окно</a>
+      </div>
+    </div>
     <div class="page-wrapper" id="page-wrapper">
       <header class="wrapper header" id="header">
         <div class="container">
           <h1 class="header__title">
             Лэндинг — быстрый старт продаж 
-            для вашего бизнеса
+            для&nbsp;вашего бизнеса
           </h1>
           <div class="header__sub-title">вникаем в задачу · не обещаем лишнего · делаем качественно · добиваемся результата</div>
         </div>
@@ -48,7 +77,7 @@
             <div class="content-wrapper__inner">
               <div class="results">
                 <div class="section-title">
-                  на результат влияют
+                  На результат влияют
                   четыре компонента
                 </div>
                 <div class="results__wrapper">   
@@ -89,7 +118,7 @@
                     </div>
                     <div class="what-we-do__item-text-wrapper">   
                       <div class="what-we-do__item-title">Формируем УТП        </div>
-                      <div class="what-we-do__item-text">Обычно у наших клиентов хороший продукт. Поэтому мы не выдумываем не существующих преимуществ, а помогаем их правильно преподнести.    </div>
+                      <div class="what-we-do__item-text">Обычно у наших клиентов хороший продукт. Поэтому мы не выдумываем несуществующих преимуществ, а помогаем их правильно преподнести.    </div>
                     </div>
                   </div>
                   <div class="what-we-do__item what-we-do__item--2">
@@ -108,7 +137,7 @@
                     <div class="what-we-do__item-text-wrapper">   
                       <div class="what-we-do__item-title">
                         Программируем, настраиваем рекламу, 
-                        и тестируем продукт 
+                        и&nbsp;тестируем продукт 
                       </div>
                       <div class="what-we-do__item-text">
                         Адаптируем под мобильные устройства, тестируем формы, настраиваем админку 
@@ -134,7 +163,7 @@
               <div class="callback__title">Позвоните нам!</div>
               <div class="callback__sub-title">
                 Чтобы долго не изучать сайт, начните с нашей консультации. 
-                Мы обсудим задачу и подготовим индивидуальное предложение
+                Мы&nbsp;обсудим задачу и подготовим индивидуальное предложение
                 
               </div><a class="btn callback__btn" data-fancybox data-src="#consult" href="javascript:;">    Отправить заявку</a>
             </div>
@@ -207,7 +236,7 @@
                   рекламы в интернете
                 </div>
                 <div class="calculator__wrapper js-lm-calc">
-                  <div class="calculator__step calculator__step--1">
+                  <div class="calculator__step calculator__step--1 active">
                     <div class="calculator__step-title">Реклама</div>
                     <div class="calculator__step-wrapper">       
                       <div class="calculator__step-form-group">
@@ -233,7 +262,10 @@
                         <div class="calculator__step-input-wrapper">
                           <input class="calculator__step-input js-lm-calc__input js-lm-calc__ctr" type="text" value="7">
                         </div>
-                        <div class="calculator__step-result"><span class="js-lm-calc__lead-cost">167</span>Стоимость лида           </div>
+                        <div class="calculator__step-result"><span class="js-lm-calc__lead-cost">167 &#8381;</span>Стоимость лида     </div>
+                        <div class="calculator__hint js-calculator__hint" style="display: none;">
+                          <div class="calculator__hint-inner">CTR=(Количество кликов / Количество показов) × 100</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -249,6 +281,9 @@
                           <input class="calculator__step-input js-lm-calc__input js-lm-calc__conversion" type="text" value="6">
                         </div>
                         <div class="calculator__step-result"><span class="js-lm-calc__foot js-lm-calc__request">120</span>Заявок  </div>
+                        <div class="calculator__hint js-calculator__hint" style="display: none;">
+                          <div class="calculator__hint-inner">Сколько процентов из всех зашедших <br>на лендинг совершит целевое действие<br>(оставит заявку, позвонит или купит)</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -264,6 +299,17 @@
                           <input class="calculator__step-input js-lm-calc__input js-lm-calc__conv-sale" type="text" value="40">
                         </div>
                         <div class="calculator__step-result"><span class="js-lm-calc__foot js-lm-calc__person">120</span>Клиентов</div>
+                        <div class="calculator__hint js-calculator__hint" style="display: none;">
+                          <div class="calculator__hint-inner">Процент клиентов, который вы получите за месяц</div>
+                        </div>
+                      </div>
+                      <div class="calculator__step-form-group">
+                        <div class="calculator__step-name">Средний чек</div>
+                        <div class="calculator__step-input-wrapper">
+                          <div class="js-lm-calc__profit"></div>
+                          <input class="calculator__step-input js-lm-calc__input js-lm-calc__av-ticket" type="text" value="45 000">
+                        </div>
+                        <div class="calculator__step-result"><span class="js-lm-calc__foot js-lm-calc__person">417 &#8381;</span>Стоит<br>клиент</div>
                       </div>
                     </div>
                   </div>
@@ -274,16 +320,22 @@
                         <div class="calculator__step-name">Рентабельность</div>
                         <div class="calculator__step-input-wrapper">
                           <input class="calculator__step-input js-lm-calc__input js-lm-calc__profit" type="text" value="35">
-                          <input class="calculator__step-input js-lm-calc__input js-lm-calc__av-ticket" type="text" value="45 000">
                         </div>
-                        <div class="calculator__step-result">Средний чек        </div>
+                        <div class="calculator__hint js-calculator__hint" style="display: none;">
+                          <div class="calculator__hint-inner">
+                             Рентабельность показывает какую часть выручки составляет прибыль R=(Прибыль / Выручка) × 100% </div>
+                        </div>
                       </div>
                       <div class="calculator__step-form-group">
                         <div class="calculator__step-name">Чистая прибыль</div>
                         <div class="calculator__step-input-wrapper">
                           <input class="calculator__step-input js-lm-calc__input js-lm-calc__net-profit" type="text" value="1 840 000">
                         </div>
-                        <div class="calculator__step-result">ROI = <span class="js-lm-calc__roi" style="display: inline-block;">3680</span>%      </div>
+                        <div class="calculator__step-result">ROI = <span class="js-lm-calc__roi" style="display: inline-block;">3680</span>%   </div>
+                        <div class="calculator__hint calculator__hint--small js-calculator__hint" style="display: none;">
+                          <div class="calculator__hint-inner">
+                             Ожидаемая прибыль за месяц с учетом всех расходов  </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -293,7 +345,7 @@
                 <div class="offer-banner__text">
                   Бесплатно спрогнозируем бюджет <br>
                   на рекламу и рассчитаем ROI  
-                </div><a class="offer-banner__link" href="#">— Давайте!                          </a>
+                </div><a class="offer-banner__link" data-fancybox data-src="#prognoz" href="javascript:;">— Давайте!                          </a>
               </div>
               <div class="portfolio">
                 <div class="section-title">Наше портфолио</div>
@@ -360,7 +412,7 @@
                         </tr>
                         <tr>
                           <td>Программирование</td>
-                          <td>+</td>
+                          <td>&minus;</td>
                           <td>+</td>
                           <td>
                             +
@@ -400,7 +452,7 @@
                         </tr>
                         <tr>
                           <td>Настройка АmoCRM.<span> аккаунт на 6 месяцев</span></td>
-                          <td>+</td>
+                          <td>&minus;</td>
                           <td>+</td>
                           <td>
                             +
@@ -410,8 +462,8 @@
                         </tr>
                         <tr>
                           <td>Настройка рекламных кампаний</td>
-                          <td>+</td>
-                          <td>+</td>
+                          <td>&minus;</td>
+                          <td>&minus;</td>
                           <td>
                             +
                             
@@ -422,8 +474,8 @@
                             Анализ статистики и отчет через
                             две недели после запуска
                           </td>
-                          <td>+</td>
-                          <td>+</td>
+                          <td>&minus;</td>
+                          <td>&minus;</td>
                           <td>
                             +
                             
@@ -431,15 +483,15 @@
                         </tr>
                         <tr>
                           <td>Одна доработка лэндинга</td>
-                          <td>+</td>
-                          <td>+</td>
+                          <td>&minus;</td>
+                          <td>&minus;</td>
                           <td>+</td>
                         </tr>
                         <tr class="price__table-buttons">
                           <td> </td>
-                          <td> <a class="price__table-link btn" href="#">53 000 ₽ </a></td>
-                          <td><a class="price__table-link btn" href="#">95 000 ₽ </a></td>
-                          <td>                        <a class="price__table-link btn" href="#">150 000 ₽ </a></td>
+                          <td> <a class="price__table-link btn" href="javascript://0" onclick="slowScroll('#footer')" data-name="Базовый">53 000 ₽ </a></td>
+                          <td><a class="price__table-link btn" href="javascript://0" onclick="slowScroll('#footer')" data-name="Продажи">95 000 ₽ </a></td>
+                          <td>                        <a class="price__table-link btn" href="javascript://0" onclick="slowScroll('#footer')" data-name="Мегаконверсия">150 000 ₽ </a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -523,23 +575,28 @@
               Наши менеджеры за 15 минут узнают о задаче <br>
               и ответят на все ваши вопросы  
             </div>
-            <div class="footer__form">
+            <form class="js-form-footer footer__form">
               <div class="footer__form-group">
-                <input class="footer__form-input" type="text" placeholder="Ваше имя">
+                <input class="recuired footer__form-input" type="text" placeholder="Ваше имя" name="name">
               </div>
-              <div class="footer__form-group">
-                <input class="footer__form-input" type="text" placeholder="Телефон">
+              <div class="footer__form-group converter-input">
+                <input class="recuired footer__form-input" type="text" placeholder="Телефон" name="phone">
+              </div>
+              <div class="footer__form-group footer__appendText">
+                <div class="js-appendText"></div>
               </div>
               <div class="footer__form-group">
                 <button class="footer__form-submit btn" type="submit">Отправить заявку   </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </footer>
     </div>
-  </body>
+  </body><!-- inject:js -->
+<!-- endinject -->
+<!-- build:js -->
   <script src="js/libs.js"></script>
+  <script src="//localhost:35729/livereload.js"></script><!-- endbuild -->
   <script src="js/common.js"></script>
-  <script src="//localhost:35729/livereload.js"></script>
 </html>

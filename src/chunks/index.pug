@@ -3,7 +3,7 @@
         .content-wrapper__inner
             .results
                 .section-title.
-                    на результат влияют
+                    На результат влияют
                     четыре компонента
                 .results__wrapper    
                     .results__item
@@ -36,7 +36,7 @@
                             .what-we-do__item-title.
                                 Формируем УТП        
                             .what-we-do__item-text.
-                                Обычно у наших клиентов хороший продукт. Поэтому мы не выдумываем не существующих преимуществ, а помогаем их правильно преподнести.    
+                                Обычно у наших клиентов хороший продукт. Поэтому мы не выдумываем несуществующих преимуществ, а помогаем их правильно преподнести.    
                     .what-we-do__item.what-we-do__item--2
                         .what-we-do__icon-wrapper-top
                             .what-we-do__icon-wrapper
@@ -53,7 +53,7 @@
                         .what-we-do__item-text-wrapper    
                             .what-we-do__item-title.
                                 Программируем, настраиваем рекламу, 
-                                и тестируем продукт 
+                                и&nbsp;тестируем продукт 
                             .what-we-do__item-text.
                                 Адаптируем под мобильные устройства, тестируем формы, настраиваем админку 
                                 и подключаем мет рику.
@@ -72,7 +72,7 @@
                 Позвоните нам!
             .callback__sub-title.
                 Чтобы долго не изучать сайт, начните с нашей консультации. 
-                Мы обсудим задачу и подготовим индивидуальное предложение
+                Мы&nbsp;обсудим задачу и подготовим индивидуальное предложение
 
             a(data-fancybox data-src="#consult" href="javascript:;").btn.callback__btn     Отправить заявку
     .content-wrapper.content-wrapper--bottom
@@ -119,7 +119,7 @@
                     Калькулятор рентабельности<br>
                     рекламы в интернете
                 .calculator__wrapper.js-lm-calc
-                    .calculator__step.calculator__step--1
+                    .calculator__step.calculator__step--1.active
                         .calculator__step-title.
                             Реклама
                         .calculator__step-wrapper        
@@ -129,6 +129,7 @@
                                     бюджет
                                 .calculator__step-input-wrapper
                                     input(type="text" value="50000").calculator__step-input.js-lm-calc__input.js-lm-calc__adv-budget
+
                                     input(type="text" value="71 429").calculator__step-input.js-lm-calc__input.js-lm-calc__ad-imp
                                 .calculator__step-result
                                     | Показов рекламы            
@@ -146,8 +147,11 @@
                                 .calculator__step-input-wrapper
                                     input(type="text" value="7").calculator__step-input.js-lm-calc__input.js-lm-calc__ctr
                                 .calculator__step-result
-                                    span.js-lm-calc__lead-cost 167
-                                    | Стоимость лида           
+                                    span.js-lm-calc__lead-cost 167 &#8381;
+                                    | Стоимость лида     
+                                .calculator__hint.js-calculator__hint(style="display: none;")
+                                    .calculator__hint-inner.
+                                        CTR=(Количество кликов / Количество показов) × 100
                     .calculator__step.calculator__step--2
                         .calculator__step-title.
                             Сайт
@@ -161,6 +165,13 @@
                                 .calculator__step-result
                                     span.js-lm-calc__foot.js-lm-calc__request 120
                                     | Заявок  
+                                .calculator__hint.js-calculator__hint(style="display: none;")
+                                    .calculator__hint-inner
+                                        |Сколько процентов из всех зашедших 
+                                        br 
+                                        |на лендинг совершит целевое действие
+                                        br
+                                        |(оставит заявку, позвонит или купит)
                     .calculator__step.calculator__step--3
                         .calculator__step-title.
                             Отдел продаж
@@ -174,6 +185,20 @@
                                 .calculator__step-result
                                     span.js-lm-calc__foot.js-lm-calc__person 120
                                     | Клиентов
+                                .calculator__hint.js-calculator__hint(style="display: none;")
+                                    .calculator__hint-inner
+                                        |Процент клиентов, который вы получите за месяц
+                            .calculator__step-form-group
+                                .calculator__step-name.
+                                    Средний чек
+                                .calculator__step-input-wrapper
+                                    .js-lm-calc__profit
+                                    input(type="text" value="45 000").calculator__step-input.js-lm-calc__input.js-lm-calc__av-ticket
+                                .calculator__step-result
+                                    span.js-lm-calc__foot.js-lm-calc__person 417 &#8381;
+                                    | Стоит
+                                    br
+                                    | клиент
                     .calculator__step.calculator__step--4
                         .calculator__step-title.
                             Деньги
@@ -183,21 +208,27 @@
                                     Рентабельность
                                 .calculator__step-input-wrapper
                                     input(type="text" value="35").calculator__step-input.js-lm-calc__input.js-lm-calc__profit
-                                    input(type="text" value="45 000").calculator__step-input.js-lm-calc__input.js-lm-calc__av-ticket
-                                .calculator__step-result.
-                                    Средний чек        
+                                //-     input(type="text" value="45 000").calculator__step-input.js-lm-calc__input.js-lm-calc__av-ticket
+                                //- .calculator__step-result.
+                                //-     Средний чек   
+                                .calculator__hint.js-calculator__hint(style="display: none;")
+                                    .calculator__hint-inner 
+                                        |Рентабельность показывает какую часть выручки составляет прибыль R=(Прибыль / Выручка) × 100% 
                             .calculator__step-form-group
                                 .calculator__step-name.
                                     Чистая прибыль
                                 .calculator__step-input-wrapper
                                     input(type="text" value="1 840 000").calculator__step-input.js-lm-calc__input.js-lm-calc__net-profit
                                 .calculator__step-result.
-                                    ROI = <span class="js-lm-calc__roi" style="display: inline-block;">3680</span>%      
+                                    ROI = <span class="js-lm-calc__roi" style="display: inline-block;">3680</span>%   
+                                .calculator__hint.calculator__hint--small.js-calculator__hint(style="display: none;")
+                                    .calculator__hint-inner 
+                                        |Ожидаемая прибыль за месяц с учетом всех расходов  
             .offer-banner
                 .offer-banner__text.
                     Бесплатно спрогнозируем бюджет <br>
                     на рекламу и рассчитаем ROI  
-                a(href="#").offer-banner__link — Давайте!                          
+                a(data-fancybox data-src="#prognoz" href="javascript:;").offer-banner__link — Давайте!                          
             .portfolio
                 .section-title.
                     Наше портфолио
@@ -276,7 +307,7 @@
                                     td.
                                         Программирование
                                     td.
-                                        +
+                                        &minus;
                                     td.
                                         +
                                     td.
@@ -319,7 +350,7 @@
                                         | Настройка АmoCRM.
                                         span  аккаунт на 6 месяцев
                                     td.
-                                        +
+                                        &minus;
                                     td.
                                         +
                                     td.
@@ -330,9 +361,9 @@
                                     td.
                                         Настройка рекламных кампаний
                                     td.
-                                        +
+                                        &minus;
                                     td.
-                                        +
+                                        &minus;
                                     td.
                                         +
                                         
@@ -341,9 +372,9 @@
                                         Анализ статистики и отчет через
                                         две недели после запуска
                                     td.
-                                        +
+                                        &minus;
                                     td.
-                                        +
+                                        &minus;
                                     td.
                                         +
                                         
@@ -351,19 +382,19 @@
                                     td.
                                         Одна доработка лэндинга
                                     td.
-                                        +
+                                        &minus;
                                     td.
-                                        +
+                                        &minus;
                                     td.
                                         +
                                 tr.price__table-buttons
                                     td 
                                     td 
-                                        a(href="#").price__table-link.btn 53 000 ₽ 
+                                        a(href="javascript://0" onclick="slowScroll('#footer')" data-name="Базовый").price__table-link.btn 53 000 ₽ 
                                     td
-                                        a(href="#").price__table-link.btn 95 000 ₽ 
+                                        a(href="javascript://0" onclick="slowScroll('#footer')" data-name="Продажи").price__table-link.btn 95 000 ₽ 
                                     td                         
-                                        a(href="#").price__table-link.btn 150 000 ₽ 
+                                        a(href="javascript://0" onclick="slowScroll('#footer')" data-name="Мегаконверсия").price__table-link.btn 150 000 ₽ 
             .info
                 .info__wrapper
                     .info__item-row.info__item-row--top

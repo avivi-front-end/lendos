@@ -58,21 +58,29 @@
         border: none;
         border-bottom: 5px solid #fff;
         width: 100%;
-
+        color: #fff;
+        font-size: 26px;
         &::-webkit-input-placeholder {
             @include footer();
+            font-size: 16px;
         }
 
         &::-moz-placeholder {
             @include footer();
+            font-size: 16px;
         }
 
         &:-moz-placeholder {
             @include footer();
+            font-size: 16px;
         }
 
         &:-ms-input-placeholder {
             @include footer();
+            font-size: 16px;
+        }
+        &:focus{
+            border-bottom: 5px solid #eecdff;
         }
     }
 
@@ -90,4 +98,11 @@
             height: 50px;
         }
     }
+    &__appendText{
+        margin-bottom: 0;
+    }
+}
+.js-appendText{
+    color: #fff;
+    font-size: 26px;
 }

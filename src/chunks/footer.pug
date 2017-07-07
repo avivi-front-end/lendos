@@ -1,15 +1,18 @@
 footer.wrapper.footer#footer
     .container
+        
         .footer__wrapper
             .footer__title.
                 Отправить заявку
             .footer__sub-title.
                 Наши менеджеры за 15 минут узнают о задаче <br>
                 и ответят на все ваши вопросы  
-            .footer__form
+            form.js-form-footer.footer__form
                 .footer__form-group
-                    input(type="text" placeholder="Ваше имя").footer__form-input
-                .footer__form-group
-                    input(type="text" placeholder="Телефон").footer__form-input    
+                    input(class="recuired" type="text" placeholder="Ваше имя" name="name").footer__form-input
+                .footer__form-group.converter-input
+                    input( class="recuired" type="text" placeholder="Телефон" name="phone").footer__form-input    
+                .footer__form-group.footer__appendText
+                    .js-appendText
                 .footer__form-group
                     button(type="submit").footer__form-submit.btn Отправить заявку   

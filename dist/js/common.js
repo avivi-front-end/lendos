@@ -75,15 +75,93 @@ var slider = (function() {
     })
 })();
 
+function slowScroll(id){
+    var offset= 0;
+    $('html, body').animate ({
+        scrollTop: $(id).offset().top - offset
+    }, 500);
+    return false;
+}
 
 var calc = (function() {
 
 })();
+var inputVal = (function(){
+    $('.converter-input').on('keyup keypress', function(e) {
+        if (e.keyCode == 8 || e.keyCode == 46) {}
+        else
+        {
+            var letters='1234567890';
+            return (letters.indexOf(String.fromCharCode(e.which))!=-1);
+        }
+    });
+})();
 
+ $('.js-form-order').validate({
+    rules: {
+      name: {
+        required : true,
+      },
+      phone: {
+        required: true,
+      }
+    },
+    messages: {
+      name: {
+        required: " ",
+      },
+      phone: {
+        required: " "
+      }
+    }
+  });
+ $('.js-form-prognoz').validate({
+    rules: {
+      name: {
+        required : true,
+      },
+      phone: {
+        required: true,
+      }
+    },
+    messages: {
+      name: {
+        required: " ",
+      },
+      phone: {
+        required: " "
+      }
+    }
+  });
+  $('.js-form-footer').validate({
+    rules: {
+      name: {
+        required : true,
+      },
+      phone: {
+        required: true,
+      }
+    },
+    messages: {
+      name: {
+        required: " ",
+      },
+      phone: {
+        required: " "
+      }
+    }
+  });
+  var showElement = (function(){
+    var innerBlock = $(".js-appendText");
+    $('.price__table-link').on('click', function(e) {
+        e.preventDefault();
+        innerBlock.text('');
+        var getAttr = $(this).attr('data-name');
+       innerBlock.text('Вы выбрали тип : ' + getAttr );
+})
+  })();
 
 (function($, document) {
-
-
 
     function init($element) {
 
@@ -513,13 +591,68 @@ var calc = (function() {
     }
 
 
-
-
     $(document).ready(function() {
-        console.log(1);
+        // console.log(1);
 
         $('.js-lm-calc').each(function() {
             init($(this));
         });
+
+        var calcInputs = (function(){
+            $('.js-lm-calc__input').on('focus', function(){
+                var thisParent =  $(this).closest('.calculator__step-form-group');
+                
+                if(thisParent.is(':has(.js-calculator__hint)')){
+                    
+                        thisParent.find('.js-calculator__hint').css('display', 'block');
+                        thisParent.find('.calculator__step-result').addClass('disabled');
+                }
+            });
+
+            $('.js-lm-calc__input').on('focusout', function(){
+                $('.js-calculator__hint').css('display', 'none');
+                $('.calculator__step-result').removeClass('disabled');
+            });
+
+            $('.js-lm-calc__input').on('keyup keypress', function(e) {
+                if (e.keyCode == 8 || e.keyCode == 46) {}
+                else
+                {
+                var letters='1234567890.';//якщо десятичні
+                    return (letters.indexOf(String.fromCharCode(e.which))!=-1);
+                }
+            });
+            $('.calculator__step').on('click', function(){
+                $('.calculator__step').removeClass('active');
+                $(this).addClass('active');
+            })
+
+        }());
+
+        $('.js-lm-calc__adv-budget, .js-lm-calc__cpc, .js-lm-calc__av-ticket, .js-lm-calc__net-profit').inputmask("numeric", {
+            radixPoint: ".",
+            groupSeparator: ",",
+            digits: 2,
+            autoGroup: true,
+            suffix: ' ₽', //No Space, this will truncate the first character
+            rightAlign: false
+            // oncleared: function () { self.Value(''); }
+        });
+         $('.js-lm-calc__profit, .js-lm-calc__ctr, .js-lm-calc__conv-sale, .js-lm-calc__conversion').inputmask("numeric", {
+            radixPoint: ".",
+            groupSeparator: ",",
+            digits: 2,
+            autoGroup: true,
+            suffix: ' %', //No Space, this will truncate the first character
+            rightAlign: false
+            // oncleared: function () { self.Value(''); }
+        });
+
+        $(".converter-input input").inputmask("+9 (999) 999-9999");
+
+        $('.js-pop-up-close').on('click', function(e){
+            $.magnificPopup.close();
+        })
+
     });
 }(jQuery, document));

@@ -4,13 +4,37 @@
             Консультация
         .pop-up__sub-title.
             Перезвоним в течение рабочего дня 
-            и разберемся в задаче           
-        form    
+            и&nbsp;разберемся в задаче           
+        form.form-pop-up.js-form-order  
             .pop-up__form
                 .pop-up__form-group.pop-up__form-group--half
-                    input(type="text" placeholder="Ваше имя").pop-up__input
-                .pop-up__form-group.pop-up__form-group--half
-                    input(type="text" placeholder="Телефон").pop-up__input
+                    input(class="recuired" type="text" placeholder="Ваше имя" name="name").pop-up__input
+                .pop-up__form-group.pop-up__form-group--half.converter-input
+                    input(class="recuired" type="text" placeholder="Телефон" name="phone").pop-up__input
                 .pop-up__form-group
                     textarea(type="text").pop-up__textarea
                 button(type="submit").pop-up__submit.btn Отправить заявку      
+.pop-up#prognoz(style="display:none;")
+    .pop-up__wrapper
+        .pop-up__title.
+            Спрогнозировать бюджет
+        .pop-up__sub-title.
+            Перезвоним в течение рабочего дня 
+            и&nbsp;разберемся в задаче           
+        form.js-form-prognoz 
+            .pop-up__form
+                .pop-up__form-group.pop-up__form-group--half
+                    input(class="recuired" type="text" placeholder="Ваше имя" name="name").pop-up__input
+                .pop-up__form-group.pop-up__form-group--half.converter-input
+                    input(class="recuired" type="text" placeholder="Телефон" name="phone").pop-up__input
+                .pop-up__form-group.textarea-wrap
+                    textarea(type="text" ).pop-up__textarea
+                    span Если вы немного расскажете о своей задаче здесь, мы будем задавать меньше вопросов по телефону
+                button(type="submit").pop-up__submit.btn Получить прогноз 
+.pop-up.pop-up_thx#thx(style="display:none;")
+    .pop-up__wrapper.pop-up__wrapper_thx
+        .pop-up__title.pop-up__title_thx.
+            Спасибо!
+        .pop-up__sub-title.pop-up__sub-title_thx.
+            Мы приняли вашу заявку. Компетентный менеджер свяжется с вами в течение дня           
+        a(href="#").pop-up__submit.btn.js-pop-up-close Закрыть окно
