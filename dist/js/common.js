@@ -83,9 +83,7 @@ function slowScroll(id){
     return false;
 }
 
-var calc = (function() {
 
-})();
 var inputVal = (function(){
     $('.converter-input').on('keyup keypress', function(e) {
         if (e.keyCode == 8 || e.keyCode == 46) {}
@@ -172,7 +170,6 @@ var inputVal = (function(){
         $inputList.each(function() {
 
             $(this).on('focus', function() {
-
                 $hintList.hide();
                 $footList.removeClass('lm-calc__disabled');
                 var $col = $(this).closest('.js-lm-calc__col');
@@ -200,10 +197,16 @@ var inputVal = (function(){
         $inputList.change(function() {
 
             // Change "," to "."
-            $(this).val($(this).val().toString().replace(/\,/g, '.'));
+            var val = $(this).val().toString().replace(/\,/g, '.');
 
-            $(this).val(filter($(this).val()));
-            $(this).val(numberWithCommas($(this).val()));
+            $(this).val(val);
+            var filt = filter($(this).val());
+
+            $(this).val(filt);
+            var nums = numberWithCommas($(this).val());
+
+            $(this).val(nums);
+
         });
 
 
@@ -220,7 +223,6 @@ var inputVal = (function(){
         ////
 
         function calc() {
-
             var $advBudget = $element.find('.js-lm-calc__adv-budget'); //СЂРµРєР»Р°РјРЅС‹Р№ Р±СЋРґР¶РµС‚
             var $adImpDown = $element.find('.js-lm-calc__ad-imp'); //РїРѕРєР°Р·РѕРІ СЂРµРєР»Р°РјС‹
             var $cpc = $element.find('.js-lm-calc__cpc'); //С†РµРЅР° Р·Р° РєР»РёРє
@@ -237,25 +239,15 @@ var inputVal = (function(){
             var $netProfit = $element.find('.js-lm-calc__net-profit'); //С‡РёСЃС‚Р°СЏ РїСЂРёР±С‹Р»СЊ
             var $roiDown = $element.find('.js-lm-calc__roi'); //roi
 
-
             var calcAdvBudget = true;
             var calcAdImpDown = false;
             var calcNetProfit = false;
-
-
             $netProfit.on('focus', function() {
-
                 calcAdvBudget = false;
                 calcAdImpDown = false;
                 calcNetProfit = true;
-
-                // $(this).removeClass('lm-calc__input_has_opacity');
-                // $advBudget.addClass('lm-calc__input_has_opacity');
-                // $adImpDown.addClass('lm-calc__input_has_opacity');
-
             }).on('focusout', function() {
-                // $(this).addClass('lm-calc__input_has_opacity');
-                // $advBudget.removeClass('lm-calc__input_has_opacity');
+
             });
 
 
@@ -290,27 +282,16 @@ var inputVal = (function(){
             //        РџРµСЂРµС…РѕРґС‹ = Р РµРє.Р±СЋРґР¶РµС‚ / СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРєР°
             //        РџРµСЂРµС…РѕРґС‹ = 40000 / 5 = 8000
             function setTransitions() {
-
                 if (calcAdImpDown) {
-
                     var r = Math.round(filter($adImpDown.val()) * filter($ctr.val() / 100));
-
                 } else {
                     var r = Math.round(filter($advBudget.val()) / filter($cpc.val()));
-
                 }
-
-
-
-
                 if (isNaN(r) || r === Number.POSITIVE_INFINITY || r === Number.NEGATIVE_INFINITY) {
                     r = 0;
                 }
-
                 r = Math.round(r);
-
                 r = numberWithCommas(r);
-
                 $transitionsDown.text(r);
                 $(window).trigger('changeTransitionsDown');
 
@@ -442,8 +423,8 @@ var inputVal = (function(){
             //РЎС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРµРЅС‚Р°=СЂРµРє. Р±СЋРґР¶РµС‚/РєР»РёРµРЅС‚РѕРІ
             //РЎС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРµРЅС‚Р°=40000/80=500СЂСѓР±
             function setCustomerValueDown() {
-                var r = filter($advBudget.val()) / filter($personDown.text());
 
+                var r = filter($advBudget.val()) / filter($personDown.text());
                 if (isNaN(r) || r === Number.POSITIVE_INFINITY || r === Number.NEGATIVE_INFINITY) {
                     r = 0;
                 }
@@ -465,19 +446,15 @@ var inputVal = (function(){
             //Р§Рџ=80*2000*0,4-40000=24000
             function setNetProfit() {
 
-                // debugger
-
                 var r = filter($personDown.text()) * filter($avTicket.val()) * filter($profit.val()) / 100 - filter($advBudget.val());
-
                 if (isNaN(r) || r === Number.POSITIVE_INFINITY || r === Number.NEGATIVE_INFINITY) {
                     r = 0;
                 }
-
                 r = Math.round(r);
                 r = numberWithCommas(r);
-
                 $netProfit.val(r);
                 $(window).trigger('changeNetProfit');
+                debugger;
             }
 
             $avTicket.on('change', function() {
@@ -563,10 +540,6 @@ var inputVal = (function(){
 
 
             }
-
-
-
-            //РѕР±СЂР°С‚РЅС‹Р№ СЂР°СЃС‡РµС‚
             $netProfit.on('change', function() {
                 setAdvBudget();
             });
@@ -592,67 +565,41 @@ var inputVal = (function(){
 
 
     $(document).ready(function() {
-        // console.log(1);
-
+        rubli();
         $('.js-lm-calc').each(function() {
             init($(this));
         });
-
-        var calcInputs = (function(){
-            $('.js-lm-calc__input').on('focus', function(){
-                var thisParent =  $(this).closest('.calculator__step-form-group');
-                
-                if(thisParent.is(':has(.js-calculator__hint)')){
-                    
-                        thisParent.find('.js-calculator__hint').css('display', 'block');
-                        thisParent.find('.calculator__step-result').addClass('disabled');
-                }
-            });
-
-            $('.js-lm-calc__input').on('focusout', function(){
-                $('.js-calculator__hint').css('display', 'none');
-                $('.calculator__step-result').removeClass('disabled');
-            });
-
-            $('.js-lm-calc__input').on('keyup keypress', function(e) {
-                if (e.keyCode == 8 || e.keyCode == 46) {}
-                else
-                {
-                var letters='1234567890.';//якщо десятичні
-                    return (letters.indexOf(String.fromCharCode(e.which))!=-1);
-                }
-            });
-            $('.calculator__step').on('click', function(){
-                $('.calculator__step').removeClass('active');
-                $(this).addClass('active');
-            })
-
-        }());
-
-        $('.js-lm-calc__adv-budget, .js-lm-calc__cpc, .js-lm-calc__av-ticket, .js-lm-calc__net-profit').inputmask("numeric", {
-            radixPoint: ".",
-            groupSeparator: ",",
-            digits: 2,
-            autoGroup: true,
-            suffix: ' ₽', //No Space, this will truncate the first character
-            rightAlign: false
-            // oncleared: function () { self.Value(''); }
-        });
-         $('.js-lm-calc__profit, .js-lm-calc__ctr, .js-lm-calc__conv-sale, .js-lm-calc__conversion').inputmask("numeric", {
-            radixPoint: ".",
-            groupSeparator: ",",
-            digits: 2,
-            autoGroup: true,
-            suffix: ' %', //No Space, this will truncate the first character
-            rightAlign: false
-            // oncleared: function () { self.Value(''); }
-        });
-
         $(".converter-input input").inputmask("+9 (999) 999-9999");
-
         $('.js-pop-up-close').on('click', function(e){
             $.magnificPopup.close();
-        })
-
+        });
+        calcInputs();
     });
 }(jQuery, document));
+function calcInputs(){
+    $('.js-lm-calc__input').on('focus', function(){
+        var thisParent =  $(this).closest('.calculator__step-form-group');
+        if(thisParent.is(':has(.js-calculator__hint)')){
+            thisParent.find('.js-calculator__hint').css('display', 'block');
+            thisParent.find('.calculator__step-result').addClass('disabled');
+        }
+    });
+    $('.js-lm-calc__input').on('focusout', function(){
+        $('.js-calculator__hint').css('display', 'none');
+        $('.calculator__step-result').removeClass('disabled');
+    });
+    $('.js-lm-calc__input').on('keyup keypress', function(e) {
+        if (e.keyCode == 8 || e.keyCode == 46) {}
+        else
+        {
+            var letters='1234567890.';//якщо десятичні
+            return (letters.indexOf(String.fromCharCode(e.which))!=-1);
+        }
+    });
+    $('.calculator__step').on('click', function(){
+        $('.calculator__step').removeClass('active');
+        $(this).addClass('active');
+    })
+
+};
+
