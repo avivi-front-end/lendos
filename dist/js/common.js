@@ -150,12 +150,13 @@ var inputVal = (function(){
     }
   });
   var showElement = (function(){
-    var innerBlock = $(".js-appendText");
+    var innerBlock = $(".js-appendText span");
     $('.price__table-link').on('click', function(e) {
         e.preventDefault();
         innerBlock.text('');
+        $(".js-appendText").css('display', 'block');
         var getAttr = $(this).attr('data-name');
-       innerBlock.text('Вы выбрали тип : ' + getAttr );
+       innerBlock.text( ' ' +getAttr);
 })
   })();
 
@@ -445,7 +446,6 @@ var inputVal = (function(){
             //Р§РёСЃС‚Р°СЏ РїСЂРёР±С‹Р»СЊ= РєР»РёРµРЅС‚С‹*СЃСЂРµРґРЅРёР№ С‡РµРє*СЂРµРЅС‚Р°Р±РµР»СЊРЅРѕСЃС‚СЊ-СЂРµРєР»Р°РјРЅС‹Р№ Р±СЋРґР¶РµС‚
             //Р§Рџ=80*2000*0,4-40000=24000
             function setNetProfit() {
-
                 var r = filter($personDown.text()) * filter($avTicket.val()) * filter($profit.val()) / 100 - filter($advBudget.val());
                 if (isNaN(r) || r === Number.POSITIVE_INFINITY || r === Number.NEGATIVE_INFINITY) {
                     r = 0;
@@ -457,6 +457,7 @@ var inputVal = (function(){
                 debugger;
             }
 
+            
             $avTicket.on('change', function() {
 
                 setNetProfit();
@@ -560,22 +561,33 @@ var inputVal = (function(){
         }
 
         calc();
-
+        
     }
 
 
     $(document).ready(function() {
-        rubli();
+         $('.calculator__wrapper input').on('keypress', function(e){
+            if (e.keyCode == 13) {
+                setNetProfit();
+                console.log("gfgd");
+            }
+        });
+
         $('.js-lm-calc').each(function() {
             init($(this));
         });
+
+
+
         $(".converter-input input").inputmask("+9 (999) 999-9999");
         $('.js-pop-up-close').on('click', function(e){
             $.magnificPopup.close();
         });
+
         calcInputs();
     });
 }(jQuery, document));
+
 function calcInputs(){
     $('.js-lm-calc__input').on('focus', function(){
         var thisParent =  $(this).closest('.calculator__step-form-group');
@@ -592,7 +604,7 @@ function calcInputs(){
         if (e.keyCode == 8 || e.keyCode == 46) {}
         else
         {
-            var letters='1234567890.';//якщо десятичні
+            var letters='1234567890';//якщо десятичні
             return (letters.indexOf(String.fromCharCode(e.which))!=-1);
         }
     });
